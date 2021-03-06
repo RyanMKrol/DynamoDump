@@ -22,7 +22,10 @@
     }
   },
   "dependencies": {
-    "inquirer": "^8.0.0"
+    "aws-sdk": "^2.858.0",
+    "inquirer": "^8.0.0",
+    "json2csv": "^5.0.6",
+    "noodle-utils": "^3.3.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.4",
