@@ -1,10 +1,10 @@
 {
-  "name": "DynamoDump",
+  "name": "noodle-dynamo-dump",
   "version": "1.0.0",
   "keywords": [],
   "repository": {
     "type": "git",
-    "url": "https://github.com/RyanMKrol/DynamoDump.git"
+    "url": "https://github.com/RyanMKrol/noodle-dynamo-dump.git"
   },
   "license": "MIT",
   "main": "build/index.js",
