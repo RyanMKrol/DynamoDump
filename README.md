@@ -32,5 +32,6 @@ And answer the following questions:
 
 Once done, you should see the content of your table printed in the console!
 
-Note: Your credentials will never be stored by this tool
+Note: Your credentials will never be stored by this tool.
+
 Note: I'd advise against running this against large databases, as this will cost you quite a bit! Also this hasn't been tested on responses that pull more than 1MB of data (at which point the API response in Dynamo starts paginating, which I have not accommodated for in this tool)
