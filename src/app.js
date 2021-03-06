@@ -1,43 +1,24 @@
 #!/usr/bin/env node
 
-/** @module app */
-
-// import * as utils from 'noodle-utils';
-// import fetchRawFundamentalsData from './modules/fetch';
-// import { generateIndex, generateScreeningData } from './modules/interaction';
-// import createFilterGroup from './modules/filters';
-// import generateReport from './modules/report';
-// import { openFile, generateReportFilename } from './modules/storage';
+import * as utils from 'noodle-utils';
 
 import prompt from './modules/questions';
+import scanTable from './modules/storage';
+import formatOutput from './modules/output';
 
 /**
  * Main
  */
 async function main() {
-  prompt();
+  const answers = await prompt();
 
-  // const index = await generateIndex();
-  // const screeningInfo = await generateScreeningData();
-  //
-  // utils.startStatusIndicator('Gathering Fundamentals Data');
-  //
-  // const filters = createFilterGroup(screeningInfo);
-  // const fundamentals = await fetchRawFundamentalsData(index);
-  //
-  // const screenedStocks = filters.reduce((acc, filter) => filter(acc), fundamentals);
-  //
-  // utils.stopStatusIndicator();
-  //
-  // utils.startStatusIndicator('Generating Screen Report');
-  //
-  // await generateReport(screenedStocks);
-  //
-  // utils.stopStatusIndicator();
-  //
-  // process.stdout.write('Finished!\n');
-  //
-  // openFile(generateReportFilename());
+  utils.startStatusIndicator('Scanning Table');
+
+  const data = await scanTable(answers.credentials, answers.table, answers.region);
+
+  utils.stopStatusIndicator();
+
+  console.log(formatOutput(data, answers.format));
 }
 
 main();
